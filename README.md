@@ -1,8 +1,8 @@
 # Teste Evo One
 
-##### Bem vindo ao teste de desenvolvimento da empresa Evo One Smart Software.
-##### Nesse desfio serão testados suas habilidades básicas com desenvolvimento front end utilizando a framework Angular.
-##### Você deve criar um projeto conforme o layout a baixo (hospedado no figma):
+###### Bem vindo ao teste de desenvolvimento da empresa Evo One Smart Software.
+###### Nesse desfio serão testados suas habilidades básicas com desenvolvimento front end utilizando a framework Angular.
+###### Você deve criar um projeto conforme o layout a baixo (hospedado no figma):
 
 https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3YH-0 
 
@@ -13,10 +13,12 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
 | https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kkfpbntbb5acnao4utbk2xvmyq | post    |
 
 ## Guia de participação
-    > Crie um fork
-    > Crie uma branch com seu nome completo 
-    > Faça um Pull request no final
-    
+    > No repositorio principal faça um fork da branch Main, criando uma nova branch com SEU NOME COMPLETO
+     
+    > Após concluido, faça uma solicitação de Pull request para o repositório principal
+
+## Para fazer a integração com o google maps vocÊ pode seguir o link a baixo:
+https://angular-maps.com/guides/getting-started/
 
 # Documentação da API
 ## getOccurence
