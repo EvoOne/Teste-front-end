@@ -29,12 +29,13 @@ id da ocorrência
 ~~~
 query MyQuery {
   getOccurence(data: {id: ""}) {
-    id
     address
     data
+    id
     image
     title
     user
+    status
   }
 }
 ~~~
@@ -60,12 +61,13 @@ query MyQuery {
 ~~~
 query MyQuery {
   listOccurences {
-    id
     address
     data
+    id
     image
     title
     user
+    status
   }
 }
 ~~~
