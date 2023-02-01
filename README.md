@@ -13,9 +13,9 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
 | https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kkfpbntbb5acnao4utbk2xvmyq | post    |
 
 ## Guia de participação
-    > No repositorio principal faça um fork da branch Main
-    > Clone o novo repositório para sua maquina 
-    > Após concluido, faça uma solicitação de Pull request para o repositório principal
+    > Crie um fork
+    > Crie uma branch com seu nome completo 
+    > Faça um Pull request no final
     
 
 # Documentação da API
