@@ -17,7 +17,7 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
      
     > Após concluido, faça uma solicitação de Pull request para o repositório principal
 
-## Para fazer a integração com o google maps vocÊ pode seguir o link a baixo:
+## Para fazer a integração com o google maps você pode seguir o link a baixo:
 https://angular-maps.com/guides/getting-started/
 
 # Documentação da API
