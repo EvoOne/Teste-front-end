@@ -1,7 +1,7 @@
 # Teste Evo One
 
-##### Bem vindo ao teste de teste de desenvolvimento da empresa Evo One Smart Software.
-##### Nesse teste serão testados suas habilidades básicas com desenvolvimento front end utilizando a framework Angular.
+##### Bem vindo ao teste de desenvolvimento da empresa Evo One Smart Software.
+##### Nesse desfio serão testados suas habilidades básicas com desenvolvimento front end utilizando a framework Angular.
 ##### Você deve criar um projeto conforme o layout a baixo (hospedado no figma):
 
 https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3YH-0 
@@ -11,6 +11,12 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
 | Endpoint                                                                         | x-api-key                      | método  |
 |:---------------------------------------------------------------------------------|:-------------------------------|:--------|
 | https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kkfpbntbb5acnao4utbk2xvmyq | post    |
+
+## Guia de participação
+    > No repositorio principal faça um fork da branch Main
+    > Clone o novo repositório para sua maquina 
+    > Após concluido, faça uma solicitação de Pull request para o repositório principal
+    
 
 # Documentação da API
 ## getOccurence
