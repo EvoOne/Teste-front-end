@@ -12,5 +12,66 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
 |:---------------------------------------------------------------------------------|:-------------------------------|:--------|
 | https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kkfpbntbb5acnao4utbk2xvmyq | post    |
 
-## Documentação da API
+# Documentação da API
+## getOccurence
+### Função que recupera uma única ocorrência 
+#### @id = String
+id da ocorrência
 
+~~~
+query MyQuery {
+  getOccurence(data: {id: ""}) {
+    id
+    address
+    data
+    image
+    title
+    user
+  }
+}
+~~~
+## getUser
+### Função que recupera um único usuário
+#### @id = String
+id do usuário
+
+~~~
+query MyQuery {
+  getUser(data: {id: ""}) {
+    id
+    address
+    email
+    name
+    phone
+  }
+}
+~~~
+
+## listOccurences
+### Função que recupera uma lista de ocorrências
+~~~
+query MyQuery {
+  listOccurences {
+    id
+    address
+    data
+    image
+    title
+    user
+  }
+}
+~~~
+
+## listUsers
+### Função que recupera uma lista de usuários
+~~~
+query MyQuery {
+  listUsers {
+    id
+    address
+    email
+    name
+    phone
+  }
+}
+~~~
