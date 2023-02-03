@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of menu.items">
+        <button type="button" [routerLink]=[item.route]>
+          <i class="{{item.iconCssClass}}"></i>
+          {{item.title}}
+        </button>
+    </li>
+
+  </ul>
+</nav>

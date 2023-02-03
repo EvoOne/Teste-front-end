@@ -1,0 +1,49 @@
+
+nav {
+  padding: 2rem 2rem;
+  border-right: solid 2px hsl(0, 0%, 53%);
+  height: 100%;
+
+
+  li {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    color: #000000B2;
+
+    i {
+      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(95%) contrast(103%);
+      background-repeat: round;
+      width: 35px;
+      height: 35px;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+        opacity: 0.6;
+        transition: 0.25s;
+      }
+    }
+
+    .occurences-icon {
+      background-image: url('../../../assets/img/occurences.svg');
+    }
+
+    .users-icon {
+      background-image: url('../../../assets/img/user.svg');
+      opacity: 0.7;
+    }
+
+    .map-icon {
+      background-image: url('../../../assets/img/map.svg');
+
+    }
+  }
+
+}
