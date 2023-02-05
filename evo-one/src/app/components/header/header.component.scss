@@ -27,7 +27,7 @@
           margin-bottom: 3px;
 
 
-          input {
+          input, select {
             border-bottom: 1px solid hsl(0, 0%, 53%);
             padding: .3rem;
 
@@ -46,9 +46,6 @@
           margin-right: 1rem;
           border-right: 1px solid hsl(0, 0%, 85%);
         }
-
-
-
 
         button {
           display: flex;

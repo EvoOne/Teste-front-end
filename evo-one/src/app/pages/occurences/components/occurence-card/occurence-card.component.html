@@ -1,12 +1,20 @@
 <div>
   <div class="img-status-container">
-    <span class="status"></span>
-    <img src="" alt="">
+    <span class="status-{{occurence.status}}"></span>
+    <div class="img-wrapper">
+      <img src="{{occurence.image}}" alt="{{occurence.title}}">
+    </div>
   </div>
   <div class="description">
-    <h2>Título da Ocorrência</h2>
-    <p>Endereço da ocorrência</p>
-    <p>Data</p>
-    <p>Usuário</p>
+    <h2>{{occurence.title}}</h2>
+    <p matTooltip="{{occurence.address}}" aria-label="Occurence address">
+
+      {{occurence.address | slice: 0:40}}
+      <span *ngIf="occurence.address.length >= 40">
+        ...
+      </span>
+    </p>
+    <p>{{occurence.data}}</p>
+    <p>{{occurence.user}}</p>
   </div>
 </div>

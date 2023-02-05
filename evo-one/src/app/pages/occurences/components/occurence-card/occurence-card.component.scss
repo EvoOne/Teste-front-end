@@ -1,0 +1,55 @@
+
+:host div {
+  padding: .8rem;
+
+
+  .img-status-container {
+    background-color: hsl(220, 3%, 83%);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+
+    .img-wrapper {
+      img {
+        margin-top: .5rem;
+        max-width: 100%;
+        height: 136px;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+    }
+
+
+    span {
+      display: block;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      float: right;
+
+    }
+
+    .status-active {
+      background-color: #74FB45;
+    }
+
+    .status-closed {
+      background-color: #FB4545;
+    }
+
+    .status-waiting {
+      background-color: #FBD345;
+    }
+  }
+
+  .description {
+    &>* {
+      margin-bottom: .8rem;
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+}

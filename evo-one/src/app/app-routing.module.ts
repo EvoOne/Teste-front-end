@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./pages/occurences/occurences.module').then(m => m.OccurencesModule)
+  },
+  {
     path: 'occurences',
     loadChildren: () => import('./pages/occurences/occurences.module').then(m => m.OccurencesModule)
   },
