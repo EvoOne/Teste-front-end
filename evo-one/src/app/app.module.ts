@@ -1,3 +1,4 @@
+import { MarkOccurencesService } from './pages/map/services/mark-occurences/mark-occurences.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/modules/shared.module';
 import { NgxSpinnerModule } from 'ngx-spinner/public_api';
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GraphQLModule } from './shared/modules/graphql.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     ReactiveFormsModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    GoogleMapsModule,
   ],
-  providers: [provideNgxMask()],
+  providers: [provideNgxMask(), MarkOccurencesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { SpinnerComponent } from './../components/spinner/spinner.component';
 import { NgModule } from '@angular/core';
-import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
+import {  NgxSpinnerModule } from 'ngx-spinner';
+import { GoogleMapsModule } from '@angular/google-maps';
 // import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 
@@ -9,7 +10,7 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     SpinnerComponent,
   ],
   imports: [
-    NgxSpinnerModule.forRoot({ type: 'ball-beat' })
+    NgxSpinnerModule.forRoot({ type: 'ball-beat' }),
     // NgxMaskDirective,
     // NgxMaskPipe,
   ],

@@ -1,5 +1,5 @@
 <article>
-  <div class="grid-container" *ngIf="occurences$ | async as occurences ; else loading">
+  <div class="grid-container" *ngIf="occurencesService.occurences$ | async as occurences ; else loading">
     <div *ngFor="let occurence of occurences | filterByValue : dateInputValue : statusInputValue">
       <app-occurence-card [occurence]="occurence"></app-occurence-card>
     </div>

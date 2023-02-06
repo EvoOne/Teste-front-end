@@ -1,11 +1,7 @@
-import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
-import { FilterByValuePipe } from './../../shared/pipes/filterPipe.pipe';
+import { OccurencesService } from './services/occurences.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { FilterService } from './../../shared/services/filter.service';
-import { Occurence } from './../../core/models/occurence.model';
-import { Apollo } from 'apollo-angular';
 import { Component, OnInit } from '@angular/core';
-import { listOccurencesQueryResponse, LIST_OCCURENCES_QUERY } from 'src/app/graphql-queries';
-import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-occurences',
@@ -14,27 +10,22 @@ import { map, Observable } from 'rxjs';
 })
 export class OccurencesComponent implements OnInit{
   constructor(
-    private apollo: Apollo,
     private filterService: FilterService,
-    private spinnerService: NgxSpinnerService
+    private spinnerService: NgxSpinnerService,
+    public occurencesService: OccurencesService
     ) {}
-
-  // users$: Observable<User[]> | null = null;
-
-  occurences$: Observable<Occurence[]> | null = null;
-  loading: boolean = true
 
 
   ngOnInit(): void {
-    this.listOccurences()
     this.spinnerService.show()
+    this.occurencesService.occurences$.subscribe(
+      occurences => {
+        if (!occurences || !occurences.length) {
+          this.occurencesService.setOccurences()
+        }
+      })
 
-  }
 
-  listOccurences() {
-    this.occurences$ = this.apollo.watchQuery<listOccurencesQueryResponse>({
-      query: LIST_OCCURENCES_QUERY
-    }).valueChanges.pipe(map(result => result.data.listOccurences))
   }
 
   get dateInputValue() {

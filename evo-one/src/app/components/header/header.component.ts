@@ -34,7 +34,6 @@ export class HeaderComponent implements OnInit {
   subscribeToDateInputValue() {
     this.form.get('dateInput')?.valueChanges.subscribe(value => {
       this.filterService.filterValues.date = value;
-      console.log(value)
     });
   }
 
