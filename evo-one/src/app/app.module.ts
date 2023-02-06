@@ -1,8 +1,6 @@
-import { MarkOccurencesService } from './pages/map/services/mark-occurences/mark-occurences.service';
+import { CoordinatesService } from './pages/map/services/mark-occurences/mark-occurences.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/modules/shared.module';
-import { NgxSpinnerModule } from 'ngx-spinner/public_api';
-import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -35,7 +33,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NgxMaskPipe,
     GoogleMapsModule,
   ],
-  providers: [provideNgxMask(), MarkOccurencesService],
+  providers: [provideNgxMask(), CoordinatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

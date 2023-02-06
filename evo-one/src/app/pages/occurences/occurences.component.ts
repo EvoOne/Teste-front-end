@@ -1,13 +1,16 @@
+import { Observable } from 'rxjs';
 import { OccurencesService } from './services/occurences.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FilterService } from './../../shared/services/filter.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Occurence } from 'src/app/core/models/occurence.model';
 
 @Component({
   selector: 'app-occurences',
   templateUrl: './occurences.component.html',
-  styleUrls: ['./occurences.component.scss']
+  styleUrls: ['./occurences.component.scss'],
 })
+
 export class OccurencesComponent implements OnInit{
   constructor(
     private filterService: FilterService,
@@ -15,17 +18,11 @@ export class OccurencesComponent implements OnInit{
     public occurencesService: OccurencesService
     ) {}
 
+    occurences$: Observable<Occurence[]> | null = null
 
   ngOnInit(): void {
     this.spinnerService.show()
-    this.occurencesService.occurences$.subscribe(
-      occurences => {
-        if (!occurences || !occurences.length) {
-          this.occurencesService.setOccurences()
-        }
-      })
-
-
+    this.occurences$ = this.occurencesService.getOccurencesFromAPI()
   }
 
   get dateInputValue() {

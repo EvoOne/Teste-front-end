@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { MarkOccurencesService } from './mark-occurences.service';
+import { CoordinatesService } from './mark-occurences.service';
 
 describe('Service: MarkOccurences', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MarkOccurencesService]
+      providers: [CoordinatesService]
     });
   });
 
-  it('should ...', inject([MarkOccurencesService], (service: MarkOccurencesService) => {
+  it('should ...', inject([CoordinatesService], (service: CoordinatesService) => {
     expect(service).toBeTruthy();
   }));
 });

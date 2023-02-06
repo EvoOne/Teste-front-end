@@ -1,15 +1,15 @@
 import { Coordinates } from './../../core/models/geocorder-response-model';
-import { MarkOccurencesService } from './services/mark-occurences/mark-occurences.service';
-import { Component, OnInit, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
+import { CoordinatesService } from './services/mark-occurences/mark-occurences.service';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { OccurencesService } from '../occurences/services/occurences.service';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
+
 })
-export class MapComponent implements OnInit, AfterViewInit {
+export class MapComponent implements OnInit {
   @ViewChildren(MapInfoWindow) infoWindowsView!: QueryList<MapInfoWindow>;
 
   center!: google.maps.LatLng
@@ -21,31 +21,18 @@ export class MapComponent implements OnInit, AfterViewInit {
 
 
   constructor(
-    private markOccurences: MarkOccurencesService,
-    private occurencesService: OccurencesService
-  ) {
+    private coordinatesService: CoordinatesService  ) {
 
   }
 
   ngOnInit(): void {
-    this.occurencesService.occurences$.subscribe(
-      occurences => {
-        if (!occurences || !occurences.length) {
-          debugger
-          this.occurencesService.setOccurences()
-        }
+    this.coordinatesService.getAddress()
+    this.coordinatesService.getCoordinatesArray().subscribe(
+      result => {
+        this.markerPositions = result
+        this.center = result[0]?.location
       })
-    this.markOccurences.setAddress()
-    this.markOccurences.setCoordinatesArray()
-    this.markerPositions = this.markOccurences.getCoordinatesArray()
-    console.log(this.markerPositions)
-
   }
-
-  ngAfterViewInit(): void {
-
-  }
-
 
   openInfoWindow(marker: MapMarker, windowIndex: number) {
     let curIdx = 0;
