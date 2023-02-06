@@ -1,5 +1,5 @@
 import { Coordinates } from './../../core/models/geocorder-response-model';
-import { CoordinatesService } from './services/mark-occurences/mark-occurences.service';
+import { CoordinatesService } from './services/coordinates/coordinates.service';
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 

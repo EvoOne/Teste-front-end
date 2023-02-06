@@ -1,4 +1,4 @@
-import { CoordinatesService } from './pages/map/services/mark-occurences/mark-occurences.service';
+import { CoordinatesService } from './pages/map/services/coordinates/coordinates.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/modules/shared.module';
 import { MaterialModule } from './shared/modules/material.module';

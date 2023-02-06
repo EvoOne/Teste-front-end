@@ -1,5 +1,5 @@
-import { OccurencesService } from './../../../occurences/services/occurences.service';
-import { GeocoderResponse, Coordinates } from './../../../../core/models/geocorder-response-model';
+import { OccurencesService } from '../../../occurences/services/occurences.service';
+import { GeocoderResponse, Coordinates } from '../../../../core/models/geocorder-response-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, of, BehaviorSubject } from 'rxjs';
