@@ -11,7 +11,7 @@ import { map, of, BehaviorSubject } from 'rxjs';
 export class CoordinatesService {
 
   addresses: string[] = []
-  coordinates = new BehaviorSubject<Coordinates[]>([])
+  private coordinates = new BehaviorSubject<Coordinates[]>([])
 
   constructor(private http: HttpClient, private occurencesService: OccurencesService) { }
 
