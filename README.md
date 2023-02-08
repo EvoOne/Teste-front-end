@@ -10,7 +10,7 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
 
 | Endpoint                                                                         | x-api-key                      | método  |
 |:---------------------------------------------------------------------------------|:-------------------------------|:--------|
-| https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kkfpbntbb5acnao4utbk2xvmyq | post    |
+| https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql   | da2-kpri4rkkvff25eutvkohvyzbdm | post    |
 
 ## Guia de participação
     > No repositorio principal faça um fork da branch Main, criando uma nova branch com SEU NOME COMPLETO
