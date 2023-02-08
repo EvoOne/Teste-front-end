@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
+import { IncidentComponent } from './components/incident/incident.component';
+import { UsersComponent } from './pages/users/users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,13 +18,16 @@ import { HomeComponent } from './pages/home/home.component';
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    IncidentComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ApolloModule
+    ApolloModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
