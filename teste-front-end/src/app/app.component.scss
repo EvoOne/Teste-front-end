@@ -1,5 +1,5 @@
 section.wrapper{
     display: flex;
     width: 100%;
-    height: calc(100vh - 7.812rem);
+    min-height: calc(100vh - 7.812rem);
 }
