@@ -1,7 +1,5 @@
-// import { HttpLink } from 'apollo-angular-link-http';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-// import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -17,7 +15,7 @@ export class GraphqlService {
   public owner: any;
   public createdOwner: any;
   public updatedOwner: any;
-  private key: string = 'da2-kkfpbntbb5acnao4utbk2xvmyq';
+  private key: string = 'da2-kpri4rkkvff25eutvkohvyzbdm';
 
   constructor(private apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
@@ -37,6 +35,23 @@ export class GraphqlService {
           title
           user
           status
+        }
+      }`,
+      context: {
+        headers: new HttpHeaders().set('x-api-key', this.key), 
+      }
+    })
+  }
+
+  public getUser(){
+    return this.apollo.query({
+      query: gql`query MyQuery {
+        listUsers {
+          id
+          address
+          email
+          name
+          phone
         }
       }`,
       context: {

@@ -10,7 +10,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IncidentComponent } from './components/incident/incident.component';
 import { UsersComponent } from './pages/users/users.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule } from '@angular/material/table'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,6 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     ApolloModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
     BrowserAnimationsModule
   ],
   providers: [],
