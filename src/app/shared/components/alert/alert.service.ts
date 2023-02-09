@@ -17,7 +17,7 @@ export class AlertService {
         this.snackBar.open(message, action, {
             horizontalPosition: 'end',
             verticalPosition: 'top',
-            panelClass: ['success-snackbar']
+            panelClass: ['warning-snackbar']
         });
     }
 
@@ -25,7 +25,7 @@ export class AlertService {
         this.snackBar.open(message, action, {
             horizontalPosition: 'end',
             verticalPosition: 'top',
-            panelClass: ['success-snackbar']
+            panelClass: ['danger-snackbar']
         });
     }
 
@@ -33,7 +33,7 @@ export class AlertService {
         this.snackBar.open(message, action, {
             horizontalPosition: 'end',
             verticalPosition: 'top',
-            panelClass: ['success-snackbar']
+            panelClass: ['info-snackbar']
         });
     }
     

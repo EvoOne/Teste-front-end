@@ -17,6 +17,7 @@ export class OccurrencesComponent implements OnInit
   route: any;
   constructor(
     private service: HomeserviceService,
+    private alert: AlertService,
     private router: Router
   ) { }
 
@@ -31,7 +32,10 @@ export class OccurrencesComponent implements OnInit
   {
     this.service.geListAllOccurrences().subscribe((data: any) => {
       this.datas = data.data.listOccurences;
-      this.service.getChange(data.data.listOccurences)
+      this.service.getChange(data.data.listOccurences);
+      this.alert.success("Lista de Usuários", "Cancelar");
+    }, (err: any) =>{
+      this.alert.danger(`Erro: ${err}`, "Cancelar");
     })
   }
 

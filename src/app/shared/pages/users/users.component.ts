@@ -1,3 +1,4 @@
+import { AlertService } from './../../components/alert/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private service: HomeserviceService,
+    private alert: AlertService,
     private router: Router
   ) { }
 
@@ -65,6 +67,9 @@ export class UsersComponent implements OnInit {
       let items = this.getFiltersPaginationLists(data.data.listUsers, this.pageIndex + 1, this.pageSize);
       this.users = items;
       this.service.getChange(data.data.listUsers);
+      this.alert.success("Lista de Usuários", "Cancelar")
+    }, (err: any) =>{
+      this.alert.danger(`Erro: ${err}`, "Cancelar")
     })
   }
 

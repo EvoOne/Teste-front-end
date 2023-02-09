@@ -34,8 +34,4 @@ export class AppComponent implements OnInit {
       .pipe(switchMap(route => route.data))
       .subscribe(event => this.titleService.setTitle(event['title']));
   }
-
-
-
-
 }
