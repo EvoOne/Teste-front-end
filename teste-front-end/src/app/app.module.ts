@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ApolloModule } from 'apollo-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,11 @@ import { UsersComponent } from './pages/users/users.component';
 import { MatTableModule } from '@angular/material/table'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapComponent } from './pages/map/map.component';
+
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +28,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MenuComponent,
     HomeComponent,
     IncidentComponent,
-    UsersComponent
+    UsersComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatTableModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GoogleMapsModule,
+    CommonModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
