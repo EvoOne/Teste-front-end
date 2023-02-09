@@ -98,7 +98,9 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/core/mock/google-mock.js"
+            ]
           }
         }
       }

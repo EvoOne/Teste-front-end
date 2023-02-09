@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { OccurencesService } from './services/occurences.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FilterService } from './../../shared/services/filter.service';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Occurence } from 'src/app/core/models/occurence.model';
 
 @Component({
