@@ -1,0 +1,13 @@
+<header class="header--component_header">
+  <img class="header--component_logo" src="../../../assets/evoone_logo.svg" alt="Logo Evo One">
+  <div class="header--component_div">
+    <form *ngIf="showForm" class="header--component_form">
+      <input type="text" placeholder="Data">
+      <div></div>
+      <input type="text" placeholder="Status">
+      <button>
+        <fa-icon style="color: white;" size="lg" [icon]="faSearch"></fa-icon>
+      </button>
+    </form>
+  </div>
+</header>
