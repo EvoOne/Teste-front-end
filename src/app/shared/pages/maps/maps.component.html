@@ -1,0 +1,64 @@
+
+<div fxLayout="row" fxFlex="100%" fxLayoutGap="16px" >
+  <agm-map 
+    class="maps-agm"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]="true"
+    [zoomControl]="true">
+
+    <agm-marker 
+        *ngFor="let m of markers; let i = index"
+        [latitude]="m.lat"
+        [longitude]="m.lng"
+        [label]="m.id"
+        [markerDraggable]="m.draggable"
+        (dragEnd)="markerDragEnd(m, $event)">
+    <agm-circle [latitude]="m.lat" [longitude]="m.lng" 
+        [radius]="250"
+        [fillColor]="'red'"
+        [circleDraggable]="m.draggable"
+        [editable]="true">
+    </agm-circle>
+        
+      <agm-info-window>
+        <strong>
+          Ocorrencia
+          <mat-card-content>
+        <p
+          class="card-imagem"
+          fxLayout="row"
+          fxLayoutAlign="space-around stretch"
+        >
+          <img
+            class="img-maps"
+            mat-card-lg-image
+            src="{{ m .image }}"
+          />
+          <span
+            [ngClass]="{
+              active: m .status === 'active',
+              closed: m .status === 'closed',
+              waiting: m .status === 'waiting'
+            }"
+          ></span>
+        </p>
+        <mat-card-title>
+          {{ m .title }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <p>Endereço: {{ m .address }}</p>
+          <p>Data: {{ m .data }}</p>
+          <p>Nome do usuario: {{ m .user }}</p>
+        </mat-card-subtitle>
+      </mat-card-content>
+        </strong>
+      </agm-info-window>
+      
+    </agm-marker>
+    
+    
+
+  </agm-map>
+</div>

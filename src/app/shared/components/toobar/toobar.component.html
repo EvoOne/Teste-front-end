@@ -1,0 +1,77 @@
+<div>
+  <mat-toolba  
+  fxLayout="row" 
+  fxLayoutAlign="start center" 
+  [ngClass]="showMaps === true ? 'toolbar-maps' : 'toolbar'">
+    <div fxFlex="10"
+        fxFlex.sm="15"
+        fxFlex.xs="25">
+      <a href="http://evo1.com.br/" target="_blank" fxFlex="100">
+        <img
+          fxFlex="100"
+          src="http://evo1.com.br/wp-content/uploads/2018/12/xcropped-logo.png.pagespeed.ic.ez2nNRDQBF.webp"
+          alt=""
+        />
+      </a>
+    </div>
+
+    <span fxFlex="1 1 auto" ></span>
+
+    <form
+      *ngIf="form"
+      class="input-search"
+      [formGroup]="form"
+      (submit)="getOccurrence()"
+      fxLayoutGap="16px"
+      [fxShow]="showOccurrence"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>Data</mat-label>
+        <input formControlName="data" matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input #userNameInput type="text" formControlName="name" matInput />
+      </mat-form-field>
+
+      <button mat-fab color="primary">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    <form
+      *ngIf="form"
+      class="input-search"
+      [formGroup]="form"
+      (submit)="getUser()"
+      fxLayoutGap="16px"
+      [fxShow]="showUser"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>Data</mat-label>
+        <input formControlName="data" matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input #userNameInput type="text" formControlName="name" matInput />
+      </mat-form-field>
+
+      <button mat-fab color="primary">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+
+    <span fxFlex="1 1 auto"></span>
+  </mat-toolba>
+</div>

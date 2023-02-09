@@ -1,0 +1,28 @@
+<mat-drawer-container >
+  <mat-drawer class="sidenav"  fxLayoutGap="16px" style="padding-bottom: 16px;" mode="side" opened >
+    <mat-button-toggle-group fxLayout="column">
+      <mat-button-toggle [routerLink]="['occurrences']" mat-button style="height: auto; padding: 8px;">
+      <p fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+        <mat-icon svgIcon="occurrences" aria-hidden="false"></mat-icon>
+        <label>Ocorrências</label>
+      </p>
+    </mat-button-toggle>
+    <mat-button-toggle [routerLink]="['users']"  mat-button style="height: auto; padding: 8px;">
+      <p fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+        <mat-icon svgIcon="users" aria-hidden="false"></mat-icon>
+        <label>Usuários</label>
+      </p>
+    </mat-button-toggle>
+    <mat-button-toggle [routerLink]="['maps']"  mat-button  style="height: auto; padding: 8px;">
+      <p fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+        <mat-icon svgIcon="maps" aria-hidden="false"></mat-icon>
+        <label>Mapas</label>
+      </p>
+    </mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-drawer>
+  <mat-drawer-content fxLayoutGap="16px" style="padding-bottom: 16px;">
+    <router-outlet fxFill></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+

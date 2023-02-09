@@ -1,0 +1,344 @@
+You can add global styles to this file, and also import other style files
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: Roboto;
+}
+
+body
+{
+    background: #ebebeb;
+}
+
+.container 
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-search
+{
+    margin: 16px;
+    padding: 8px 0 8px 32px;
+    background-color: #f5f5f5;
+    border: 1px solid #888888;
+    border-radius: 50px;
+    width: 43%;
+    height: 55px
+}
+
+.toolbar 
+{
+    background-color: #f5f5f5 !important;
+    padding: 0 16px;
+    border-bottom: 1px solid #888888;
+}
+
+.toolbar-maps 
+{
+    background-color: #f5f5f5 !important;
+    padding: 29px 0 29px 16px; 
+    border-bottom: 1px solid #888888;
+}
+
+.sidenav
+{
+    border-right: 1px solid #888888;
+}
+
+.img-occurences
+{
+    border-radius: 8px ;
+    margin: 16px;
+    color: #bbb;
+}
+
+.img-maps {
+    border-radius: 8px;
+    height: 150px;
+    width: 50%;
+    margin: 16px;
+    color: #bbb;
+}
+
+.active 
+{
+    margin: 16px;
+    height: 25px;
+    width: 25px;
+    background-color: #74FB45;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.waiting 
+{
+    margin: 16px;
+    height: 25px;
+    width: 25px;
+    background-color: #FBD345;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.closed 
+{
+    margin: 16px;
+    height: 25px;
+    width: 25px;
+    background-color: #fb4545;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.card-imagem
+{
+    background-color: #d1d2d4;
+    border-radius: 8px;
+}
+
+.mat-drawer-container
+{
+    height: 674px;
+}
+
+.success-snackbar
+{
+    background-color: #fff;
+}
+
+.warning-snackbar
+{
+    background-color: #FBD345;
+}
+
+.danger-snackbar
+{
+    background-color: #fb4545;
+}
+
+.info-snackbar
+{
+    background-color: aqua;
+}
+
+@media (min-width:320px) and (max-width: 470px) {
+    /* div{
+        background-color: red;
+    } */
+        agm-map {
+            padding-left: 16px;
+            width: 98%;
+            height: 575px;
+        }
+    
+        .mat-drawer-container {
+            height: 668px;
+        }
+    
+        .input-search {
+            margin: 16px;
+            padding: 8px 0 8px 32px;
+            background-color: #f5f5f5;
+            border: 1px solid #888888;
+            border-radius: 50px;
+            width: 45%;
+            height: 55px
+        }
+    
+        .card-users {
+            margin: 0 32px;
+        }
+}
+
+@media (min-width:480px) and (max-width: 599px) {
+    agm-map {
+            padding-left: 16px;
+            width: 98%;
+            height: 575px;
+        }
+    
+        .mat-drawer-container {
+            height: 615px;
+        }
+    
+        .input-search {
+            margin: 16px;
+            padding: 8px 0 8px 32px;
+            background-color: #f5f5f5;
+            border: 1px solid #888888;
+            border-radius: 50px;
+            width: 45%;
+            height: 55px
+        }
+        .card-users {
+            margin: 0 32px;
+        }
+}
+
+@media (min-width:600px) and (max-width: 800px){
+    agm-map {
+            padding-left: 16px;
+            width: 98%;
+            height: 620px;
+        }
+    
+        .mat-drawer-container {
+            height: 668px
+        }
+    
+        .input-search {
+            margin: 16px;
+            padding: 8px 0 8px 32px;
+            background-color: #f5f5f5;
+            border: 1px solid #888888;
+            border-radius: 50px;
+            width:75%;
+            height: 55px
+        }
+        .input-search .mat-form-field {
+            height: 30px;
+        }
+
+        .card-users{
+            margin: 0 32px;
+        }
+}
+
+@media (min-width:801px) and (max-width: 1023px) {
+    agm-map {
+            padding-left: 16px;
+            width: 98%;
+            height: 575px;
+        }
+    
+        .mat-drawer-container {
+            height: 615px;
+        }
+    
+        .input-search {
+            margin: 16px;
+            padding: 8px 0 8px 32px;
+            background-color: #f5f5f5;
+            border: 1px solid #888888;
+            border-radius: 50px;
+            width: 45%;
+            height: 55px
+        }
+}
+
+@media (min-width:1024px) and (max-width: 1279px) {
+    agm-map {
+            padding-left: 16px;
+            width: 98%;
+            height: 636px;
+        }
+    
+        .mat-drawer-container {
+            height: 768;
+        }
+    
+        .input-search {
+            margin: 16px;
+            padding: 8px 0 8px 32px;
+            background-color: #f5f5f5;
+            border: 1px solid #888888;
+            border-radius: 50px;
+            width: 60%;
+            height: 55px
+        }
+}
+
+@media (min-width:1280px) and (max-width: 1358px) {
+    /* div {
+            background-color: pink;
+        } */
+    agm-map {
+        padding-left: 16px;
+        width: 98%;
+        height: 575px;
+    }
+
+    .mat-drawer-container {
+        height: 715px;
+    }
+    
+    .input-search {
+        margin: 16px;
+        padding: 8px 0 8px 32px;
+        background-color: #f5f5f5;
+        border: 1px solid #888888;
+        border-radius: 50px;
+        width: 40%;
+        height: 55px
+    }
+}
+
+@media (min-width:1359px) and (max-width: 1819px) {
+    agm-map {
+        padding-left: 16px;
+        width: 99%;
+        height: 484px !important;
+    }
+
+    .mat-drawer-container {
+        height: 518px;
+    }
+
+    .input-search {
+        margin: 16px;
+        padding: 8px 0 8px 32px;
+        background-color: #f5f5f5;
+        border: 1px solid #888888;
+        border-radius: 50px;
+        width: 45%;
+        height: 55px
+    }
+}
+
+
+@media (min-width:1438px) and (max-width: 1819px) {
+    agm-map {
+        padding-left: 16px;
+        width: 99%;
+        height: 623px !important;
+    }
+
+    .mat-drawer-container {
+        height: 659px;
+    }
+
+    .input-search {
+        margin: 16px;
+        padding: 8px 0 8px 32px;
+        background-color: #f5f5f5;
+        border: 1px solid #888888;
+        border-radius: 50px;
+        width: 45%;
+        height: 55px
+    }
+}
+
+@media (min-width:1820px) {
+    agm-map {
+        padding-left: 16px;
+        width: 99%;
+        height: 943px !important;
+    }
+    .mat-drawer-container {
+        height: 975px;
+    }
+
+    .input-search {
+        margin: 16px;
+        padding: 8px 0 8px 32px;
+        background-color: #f5f5f5;
+        border: 1px solid #888888;
+        border-radius: 50px;
+        width: 30%;
+        height: 55px
+    }
+}
