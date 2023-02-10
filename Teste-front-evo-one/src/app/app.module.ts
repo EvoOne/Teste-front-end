@@ -1,3 +1,5 @@
+import { ListUserRequestService } from './service/list-user-request.service';
+import { ListOccurencesRequestService } from './service/list-occurences-request.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -8,10 +10,30 @@ import { InMemoryCache } from '@apollo/client/core';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { RouterModule } from '@angular/router';
+import { OccurrencesListComponent } from './components/occurrences-list/occurrences-list.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SideBarComponent],
-  imports: [BrowserModule, ApolloModule, HttpClientModule, FontAwesomeModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SideBarComponent,
+    OccurrencesListComponent,
+    UsersListComponent,
+  ],
+  imports: [
+    BrowserModule,
+    ApolloModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: OccurrencesListComponent },
+      { path: 'users', component: UsersListComponent },
+    ]),
+  ],
   providers: [
     {
       provide: APOLLO_OPTIONS,
@@ -19,12 +41,14 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql?key=da2-kpri4rkkvff25eutvkohvyzbdm',
+            uri: 'https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql',
           }),
         };
       },
       deps: [HttpLink],
     },
+    ListOccurencesRequestService,
+    ListUserRequestService,
   ],
   bootstrap: [AppComponent],
 })

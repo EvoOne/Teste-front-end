@@ -1,22 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 @Injectable({
   providedIn: 'root',
 })
 export class ListSpecificOccurencesRequestService {
-  constructor(private http: HttpClient) {}
+  constructor(private apollo: Apollo) {}
 
   ngOnInit() {
-    const headers = new HttpHeaders({
-      'x-api-key': 'da2-kpri4rkkvff25eutvkohvyzbdm',
-    });
-    this.http
-      .get(
-        'https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql',
-        {
-          headers,
-          params: {
-            query: `
+    this.apollo
+      .query({
+        query: gql`
           query MyQuery {
             listOccurences {
               address
@@ -29,10 +23,13 @@ export class ListSpecificOccurencesRequestService {
             }
           }
         `,
+        context: {
+          headers: {
+            'x-api-key': 'da2-kpri4rkkvff25eutvkohvyzbdm',
           },
-        }
-      )
-      .subscribe((data) => {
+        },
+      })
+      .subscribe(({ data }) => {
         console.log(data);
       });
   }

@@ -1,15 +1,23 @@
-<div class="side-bar--item">
+<div class="side-bar--item" [routerLink]="['']" (click)="setCurrentRoute('occurrences')">
   <img src="../../../assets/map-monitoring.svg" alt="Ocorrências">
   <p>Ocorrências</p>
-  <span></span>
+  <span [ngSwitch]="currentRoute">
+    <span *ngSwitchCase="'occurrences'" class="side-bar--item__span"></span>
+  </span>
 </div>
-<div class="side-bar--item">
+
+<div class="side-bar--item" [routerLink]="['users']" (click)="setCurrentRoute('users')">
   <img src="../../../assets/users.svg" alt="Usuários">
   <p>Usuários</p>
-  <span></span>
+  <span [ngSwitch]="currentRoute">
+    <span *ngSwitchCase="'users'" class="side-bar--item__span"></span>
+  </span>
 </div>
-<div class="side-bar--item">
+
+<div class="side-bar--item" (click)="setCurrentRoute('map')">
   <img src="../../../assets/map.svg" alt="Mapa">
   <p>Mapa</p>
-  <span></span>
+  <span [ngSwitch]="currentRoute">
+    <span *ngSwitchCase="'map'" class="side-bar--item__span"></span>
+  </span>
 </div>

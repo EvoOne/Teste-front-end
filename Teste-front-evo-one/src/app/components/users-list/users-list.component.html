@@ -1,0 +1,42 @@
+<div class="users--container">
+  <div class="users--container_div">
+    <div class="user--table_container">
+      <table class="users--container_table">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+        </tr>
+        <tr *ngFor="let user of users | slice:start:start + itemsPerPage">
+          <td class="table--row_name">{{user.name}}</td>
+          <td class="table--row_phone">{{user.phone}}</td>
+          <td class="table--row_address">{{user.address}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="users--container_footer">
+      <form>
+        <label for="rows">Rows per page:</label>
+        <select name="rows" id="rows" [(ngModel)]="itemsPerPage" (ngModelChange)="itemsPerPage = +itemsPerPage">
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+      </form>
+      <p>Mostrando
+        {{start + 1}} -
+        {{(start + itemsPerPage > users.length ? users.length : start + itemsPerPage) | number: '1.0-0'}}
+        usuários</p>
+
+
+      <button (click)="previousPage()" [disabled]="start - itemsPerPage < 0"
+        [ngClass]="{'disabled-button': start - itemsPerPage < 0}">
+        <fa-icon [icon]="left"></fa-icon>
+      </button>
+
+      <button (click)="nextPage()" [disabled]="start + itemsPerPage >= users.length"
+        [ngClass]="{'disabled-button': start + itemsPerPage >= users.length}">
+        <fa-icon [icon]="right"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<ul class="list--container">
+  <li *ngFor="let occurence of occurences.listOccurences" class="list--container-item">
+    <div>
+      <img src="{{occurence.image}}" alt="{{occurence.title}}">
+      <span [ngSwitch]="occurence.status">
+
+        <fa-icon *ngSwitchCase="'active'" style="color: #74FB45" size="lg" [icon]="circle"></fa-icon>
+        <fa-icon *ngSwitchCase="'closed'" style="color: #FB4545" size="lg" [icon]="circle"></fa-icon>
+        <fa-icon *ngSwitchCase="'waiting'" style="color: #FBD345" size="lg" [icon]="circle"></fa-icon>
+      </span>
+    </div>
+    <h2>{{occurence.title}}</h2>
+    <p>{{occurence.address}}</p>
+    <span>{{occurence.data}}</span>
+    <span>{{occurence.user}}</span>
+  </li>
+</ul>

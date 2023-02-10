@@ -9,4 +9,5 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent {
   showForm = true;
   faSearch = faMagnifyingGlass;
+  constructor() {}
 }

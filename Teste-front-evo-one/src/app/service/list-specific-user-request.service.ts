@@ -1,37 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class ListSpecificUserRequestService {
-  constructor(private http: HttpClient) {}
+  constructor(private apollo: Apollo) {}
 
   ngOnInit() {
-    const headers = new HttpHeaders({
-      'x-api-key': 'da2-kpri4rkkvff25eutvkohvyzbdm',
-    });
-    this.http
-      .get(
-        'https://xsksoss2sneujaauha6u5wqzsq.appsync-api.us-west-1.amazonaws.com/graphql',
-        {
-          headers,
-          params: {
-            query: `
-            query MyQuery {
-              getUser(data: {id: "1"}) {
-                id
-                address
-                email
-                name
-                phone
-              }
+    this.apollo
+      .query({
+        query: gql`
+          query MyQuery {
+            getUser(data: { id: "1" }) {
+              id
+              address
+              email
+              name
+              phone
             }
+          }
         `,
+        context: {
+          headers: {
+            'x-api-key': 'da2-kpri4rkkvff25eutvkohvyzbdm',
           },
-        }
-      )
-      .subscribe((data) => {
+        },
+      })
+      .subscribe(({ data }) => {
         console.log(data);
       });
   }
