@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ApolloModule } from 'apollo-angular';
@@ -19,6 +19,13 @@ import { MapComponent } from './pages/map/map.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from './components/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -29,7 +36,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     IncidentComponent,
     UsersComponent,
-    MapComponent
+    MapComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +50,16 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     GoogleMapsModule,
     CommonModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

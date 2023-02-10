@@ -1,18 +1,18 @@
 <section class="menu">
     <ul>
-        <li>
+        <li [ngClass]="{'active': router.url === '/home'}" class="home">
             <a routerLink="/home">
                 <img src="assets/incidents.svg" alt="Acessar ocorrências">
                 Ocorrências
             </a>
         </li>
-        <li>
+        <li [ngClass]="{'active': router.url === '/users'}" class="users">
             <a routerLink="/users">
                 <img src="assets/users.svg" alt="Acessar Usuários">
                 Usuários
             </a>
         </li>
-        <li>
+        <li [ngClass]="{'active': router.url === '/map'}" class="map">
             <a routerLink="/map">
                 <img src="assets/map.svg" alt="Acessar Mapa">
                 Mapa

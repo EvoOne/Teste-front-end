@@ -2,12 +2,18 @@ header.top-side-header{
     height: 7.812rem;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #888;
+    border-bottom: .0625rem solid #888;
     box-sizing: border-box;
+    justify-content: space-between;
     
     .logo{
         width: 8.25rem;
         margin-left: 2.625rem;
     }
+
+    .search{
+        margin: 0 auto;
+    }
 }
+
 

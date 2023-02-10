@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { HttpHeaders } from '@angular/common/http';
@@ -16,6 +16,8 @@ export class GraphqlService {
   public createdOwner: any;
   public updatedOwner: any;
   private key: string = 'da2-kpri4rkkvff25eutvkohvyzbdm';
+  public incidentList = new EventEmitter();
+  public results: any;
 
   constructor(private apollo: Apollo, httpLink: HttpLink) {
     apollo.create({

@@ -1,5 +1,5 @@
 <section class="home">
-    <!-- <incident class="incidents" [incidents]="incidents"></incident> -->
-    <incident class="incidents"></incident>
-    <!-- <h1>{{searchResult?.id}}</h1> -->
+    <div class="incidents">
+        <incident *ngFor="let data of incidents" [incident]="data"></incident>
+    </div>
 </section>

@@ -1,11 +1,13 @@
-<div *ngFor="let item of incidents" class="incident">
-    <img src="{{item.image}}" class="item-image" alt="Imagem da Ocorrencia">
+<article class="incident">
+    <div class="content-image">
+        <img src="{{incident.image}}" class="item-image" alt="Imagem da Ocorrencia">
+    </div>
     <div class="content-incident">
-        <h1 class="title">{{item.title}}</h1>
-        <p class="address">{{item.address}}</p>
-        <p class="data">{{item.data}}</p>
-        <p class="user">{{item.user}}</p>
+        <h1 class="title">{{incident.title}}</h1>
+        <p class="address">{{incident.address}}</p>
+        <p class="data">{{incident.data}}</p>
+        <p class="user">{{incident.user}}</p>
     </div>
-    <div class="status" ngClass="{'closed': {{item.status}} == 'closed', 'active': {{item.status}} == 'active', 'waiting': {{item.status}} == 'waiting}">
+    <div class="status" ngClass="{'closed': {{incident.status}} == 'closed', 'active': {{incident.status}} == 'active', 'waiting': {{incident.status}} == 'waiting}">
     </div>
-</div>
+</article>

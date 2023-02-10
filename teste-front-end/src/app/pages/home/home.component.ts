@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GraphqlService } from 'src/app/services/graphql.service';
 
 @Component({
@@ -7,13 +7,20 @@ import { GraphqlService } from 'src/app/services/graphql.service';
   styleUrls: ['./home.component.scss']
 })
 
-
 export class HomeComponent{
-  // search(data: string, id: string){
-  //   const idItem = this.incidents.findIndex((item: any) => item.data === data && item.id === id);
+  incidents:any;
 
-  //   if (idItem !== -1) {
-  //     this.searchResult = this.incidents[idItem];
-  //   }
-  // }
+  constructor(public graphql: GraphqlService){}
+
+  ngOnInit(){
+    this.graphql.getIncidents().subscribe(result => {
+      this.graphql.results = result.data as any; 
+      this.graphql.results = this.graphql.results.listOccurences;
+      this.graphql.incidentList.emit(this.graphql.results);
+    });
+
+    this.graphql.incidentList.subscribe(result => {
+      this.incidents = result;
+    })
+  }
 }

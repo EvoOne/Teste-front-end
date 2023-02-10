@@ -1,10 +1,12 @@
-.incident{
+article.incident{
     position: relative;
+    width: 15.9375rem;
+    
     .content-incident{
         display: flex;
         flex-direction: column;
-        align-items: start;
-        gap: 0.4rem;
+        align-items: flex-start;
+        justify-content: flex-start;
 
         margin-top: 0.75rem;
 
@@ -16,10 +18,16 @@
             font-weight: 700;
         }
     }
-    .item-image{
-        border-radius: 5px;
-        width: 15.9375rem;
-        height: 17.5rem;
+    .content-image{
+        height: 17.80rem;
+        overflow: hidden;
+        border-radius: 1.625rem;
+        display: flex;
+        align-items: center;
+
+        .item-image{
+            height: 100%;
+        }
     }
 
     .status{

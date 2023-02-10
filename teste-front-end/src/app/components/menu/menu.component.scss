@@ -1,7 +1,7 @@
 section.menu{
     display: flex;
     flex-direction: column;
-    border-right: 2px solid #888;
+    border-right: .125rem solid #888;
     box-sizing: border-box;
     height: 100%;
     width: 5.9375rem;
@@ -10,10 +10,13 @@ section.menu{
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 2.4375rem;
+        gap: 1.9375rem;
         padding-top: 1rem;
 
         li{
+            position: relative;
+            padding-bottom: .625rem;
+
             a{
                 display: flex;
                 align-items: center;
@@ -29,6 +32,35 @@ section.menu{
             &:hover{
                 color: #000;
             }
+
+            &.active::after{
+                content: "";
+                width: 3.3125rem;
+                height: .25rem;
+                position: absolute;
+                bottom: 0;
+                
+                background-color: #000;
+            }
+
+            &.home{
+                &.active::after{
+                    left: 0.8rem;
+                }
+            }
+
+            &.users{
+                &.active::after{
+                    left: 0.2rem;
+                }
+            }
+
+            &.map{
+                &.active::after{
+                    left: -0.5rem;
+                }
+            }
         }
     }
 }
+
