@@ -14,7 +14,7 @@
   </span>
 </div>
 
-<div class="side-bar--item" (click)="setCurrentRoute('map')">
+<div class="side-bar--item" [routerLink]="['map']" (click)="setCurrentRoute('map')">
   <img src="../../../assets/map.svg" alt="Mapa">
   <p>Mapa</p>
   <span [ngSwitch]="currentRoute">

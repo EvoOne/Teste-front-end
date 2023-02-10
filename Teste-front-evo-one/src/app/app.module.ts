@@ -3,7 +3,7 @@ import { ListOccurencesRequestService } from './service/list-occurences-request.
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
@@ -14,7 +14,8 @@ import { RouterModule } from '@angular/router';
 import { OccurrencesListComponent } from './components/occurrences-list/occurrences-list.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { FormsModule } from '@angular/forms';
-
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MapComponent } from './components/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     SideBarComponent,
     OccurrencesListComponent,
     UsersListComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +31,12 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
+    GoogleMapsModule,
+    HttpClientJsonpModule,
     RouterModule.forRoot([
       { path: '', component: OccurrencesListComponent },
       { path: 'users', component: UsersListComponent },
+      { path: 'map', component: MapComponent },
     ]),
   ],
   providers: [
