@@ -2,10 +2,10 @@
   <img class="header--component_logo" src="../../../assets/evoone_logo.svg" alt="Logo Evo One">
   <div class="header--component_div">
     <form *ngIf="showForm" class="header--component_form">
-      <input type="text" placeholder="Data">
+      <input type="text" placeholder="Data" [(ngModel)]="dateFilter" name="dateFilter">
       <div></div>
-      <input type="text" placeholder="Status">
-      <button>
+      <input type="text" placeholder="Status" [(ngModel)]="statusFilter" name="statusFilter">
+      <button (click)="applyFilters()">
         <fa-icon style="color: white;" size="lg" [icon]="faSearch"></fa-icon>
       </button>
     </form>

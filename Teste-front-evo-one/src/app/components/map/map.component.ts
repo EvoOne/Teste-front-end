@@ -1,11 +1,11 @@
-// import { Component } from '@angular/core';
-// // import { GoogleMap } from '@angular/google-maps';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { ListOccurencesRequestService } from './../../service/list-occurences-request.service';
+import { Component, ElementRef, ViewChild, Inject } from '@angular/core';
 import { GoogleMap } from '@angular/google-maps';
-
+import { MapGeocoder } from '@angular/google-maps';
+export interface MapGeocoderResponse {
+  status: google.maps.GeocoderStatus;
+  results: google.maps.GeocoderResult[];
+}
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -18,75 +18,68 @@ export class MapComponent {
   @ViewChild(GoogleMap)
   public map!: GoogleMap;
 
-  zoom = 12;
-  center!: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     zoomControl: true,
-    scrollwheel: false,
+    scrollwheel: true,
     disableDefaultUI: true,
     fullscreenControl: true,
     disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
+    center: { lat: -30.0687298, lng: -51.1660269 },
+    zoom: 13,
   };
-  latitude!: any;
-  longitude!: any;
+  markerOptions: google.maps.MarkerOptions = { draggable: false };
+  occurences: any[] = [];
+  positions: any[] = [];
 
-  apiLoaded: Observable<boolean>;
-
-  constructor(private ngZone: NgZone, httpClient: HttpClient) {
-    this.apiLoaded = httpClient
-      .jsonp(
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDckH1MJQu7ByJKzaEtqlJ-tpKdmNo9ffA&libraries=places',
-        'callback'
-      )
-      .pipe(
-        map(() => {
-          return true;
-        }),
-        catchError((error) => {
-          console.error(error);
-          return of(false);
-        })
-      );
+  constructor(
+    @Inject(ListOccurencesRequestService)
+    private listOccurencesRequestService: ListOccurencesRequestService,
+    geocoder: MapGeocoder
+  ) {
+    this.listOccurencesRequestService
+      .getOccurrences()
+      .subscribe((data: any) => {
+        this.occurences = data.listOccurences;
+        this.occurences.map((occurences) => {
+          geocoder
+            .geocode({
+              address: occurences.address,
+            })
+            .subscribe(({ results }: MapGeocoderResponse) => {
+              this.positions.push({
+                title: occurences.title,
+                position: results[0].geometry.location,
+              });
+            });
+        });
+      });
   }
   ngAfterViewInit(): void {
-    this.apiLoaded.subscribe((apiLoaded) => {
-      if (apiLoaded) {
-        let autocomplete = new google.maps.places.Autocomplete(
-          this.searchElementRef.nativeElement
-        );
-
-        this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-          this.searchElementRef.nativeElement
-        );
-        autocomplete.addListener('place_changed', () => {
-          this.ngZone.run(() => {
-            let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-            if (place.geometry === undefined || place.geometry === null) {
-              return;
-            }
-
-            console.log({ place }, place.geometry.location?.lat());
-
-            this.latitude = place.geometry.location?.lat();
-            this.longitude = place.geometry.location?.lng();
-            this.center = {
-              lat: this.latitude,
-              lng: this.longitude,
-            };
-          });
-        });
+    const searchBox = new google.maps.places.SearchBox(
+      this.searchElementRef.nativeElement
+    );
+    this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+      this.searchElementRef.nativeElement
+    );
+    searchBox.addListener('places_changed', () => {
+      const places = searchBox.getPlaces();
+      if (places?.length === 0) {
+        return;
       }
+      const bounds = new google.maps.LatLngBounds();
+      places?.forEach((place) => {
+        if (!place.geometry || !place.geometry.location) {
+          return;
+        }
+        if (place.geometry.viewport) {
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      this.map.fitBounds(bounds);
     });
   }
 
-  ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-    });
-  }
+  ngOnInit() {}
 }

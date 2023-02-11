@@ -1,3 +1,4 @@
+import { HeaderService } from './../../service/header.service';
 import { Component } from '@angular/core';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,8 +7,33 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
+// export class HeaderComponent {
+//   showForm = true;
+//   faSearch = faMagnifyingGlass;
+//   dateFilter = '';
+//   statusFilter = '';
+//   constructor(private HeaderService: HeaderService) {
+//     this.HeaderService.showForm$.subscribe((showForm) => {
+//       this.showForm = showForm;
+//     });
+//   }
+// }
 export class HeaderComponent {
   showForm = true;
   faSearch = faMagnifyingGlass;
-  constructor() {}
+  dateFilter = '';
+  statusFilter = '';
+
+  constructor(private headerService: HeaderService) {
+    this.headerService.showForm$.subscribe((showForm) => {
+      this.showForm = showForm;
+    });
+  }
+
+  applyFilters() {
+    this.headerService.updateFilters({
+      dateFilter: this.dateFilter,
+      statusFilter: this.statusFilter,
+    });
+  }
 }

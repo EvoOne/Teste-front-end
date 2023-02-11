@@ -1,8 +1,7 @@
-<div>
-  <!-- <label>Enter address</label> -->
   <input type="text" class="my-search-box" (keydown.enter)="$event.preventDefault()" placeholder="Search Location"
     type="text" #search />
-</div>
-<div *ngIf="apiLoaded | async">
-  <google-map height="981px" width="1731px" [center]="center" [zoom]="zoom"></google-map>
-</div>
+  <google-map height="981px" width="1731px" [options]="options">
+    <map-marker *ngFor="let markerPosition of positions" [position]="markerPosition.position"
+      [title]="markerPosition.title" [options]="markerOptions">
+    </map-marker>
+  </google-map>

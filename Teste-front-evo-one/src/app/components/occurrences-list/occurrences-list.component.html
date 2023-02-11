@@ -1,5 +1,5 @@
 <ul class="list--container">
-  <li *ngFor="let occurence of occurences.listOccurences" class="list--container-item">
+  <li *ngFor="let occurence of occurences " class="list--container-item">
     <div>
       <img src="{{occurence.image}}" alt="{{occurence.title}}">
       <span [ngSwitch]="occurence.status">
