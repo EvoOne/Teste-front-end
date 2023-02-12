@@ -1,23 +1,23 @@
-<div class="side-bar--item" [routerLink]="['']" (click)="setCurrentRoute('occurrences')">
+<div class="side-bar--item" [routerLink]="['']" (click)="setCurrentRoute()">
   <img src="../../../assets/map-monitoring.svg" alt="Ocorrências">
   <p>Ocorrências</p>
   <span [ngSwitch]="currentRoute">
-    <span *ngSwitchCase="'occurrences'" class="side-bar--item__span"></span>
+    <span *ngSwitchCase="'Occurences'" class="side-bar--item__span"></span>
   </span>
 </div>
 
-<div class="side-bar--item" [routerLink]="['users']" (click)="setCurrentRoute('users')">
+<div class="side-bar--item" [routerLink]="['users']" (click)="setCurrentRoute()">
   <img src="../../../assets/users.svg" alt="Usuários">
   <p>Usuários</p>
   <span [ngSwitch]="currentRoute">
-    <span *ngSwitchCase="'users'" class="side-bar--item__span"></span>
+    <span *ngSwitchCase="'Users'" class="side-bar--item__span"></span>
   </span>
 </div>
 
-<div class="side-bar--item" [routerLink]="['map']" (click)="setCurrentRoute('map')">
+<div class="side-bar--item" [routerLink]="['map']" (click)="setCurrentRoute()">
   <img src="../../../assets/map.svg" alt="Mapa">
   <p>Mapa</p>
   <span [ngSwitch]="currentRoute">
-    <span *ngSwitchCase="'map'" class="side-bar--item__span"></span>
+    <span *ngSwitchCase="'Map'" class="side-bar--item__span"></span>
   </span>
 </div>

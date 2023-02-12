@@ -1,15 +1,3 @@
-#map {
-  width: 1732px;
-  height: 100%;
-}
-.map-container {
-  width: 800px;
-  height: 600px;
-}
-google-map {
-  width: 100%;
-  height: 100%;
-}
 .my-search-box {
   align-self: center;
   font-size: 1rem;
