@@ -1,6 +1,6 @@
 import { ListUserRequestService } from './service/list-user-request.service';
 import { ListOccurencesRequestService } from './service/list-occurences-request.service';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -34,9 +34,17 @@ import { MapComponent } from './components/map/map.component';
     GoogleMapsModule,
     HttpClientJsonpModule,
     RouterModule.forRoot([
-      { path: '', component: OccurrencesListComponent },
-      { path: 'users', component: UsersListComponent },
-      { path: 'map', component: MapComponent },
+      {
+        path: '',
+        component: OccurrencesListComponent,
+        data: { variableName: 'Occurences' },
+      },
+      {
+        path: 'users',
+        component: UsersListComponent,
+        data: { variableName: 'Users' },
+      },
+      { path: 'map', component: MapComponent, data: { variableName: 'Map' } },
     ]),
   ],
   providers: [
