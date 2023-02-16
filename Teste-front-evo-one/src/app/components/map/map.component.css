@@ -1,0 +1,14 @@
+.my-search-box {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #212529;
+  width: 40%;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  padding: 1rem;
+}

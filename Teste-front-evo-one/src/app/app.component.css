@@ -1,0 +1,21 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.side-bar--component {
+  border-right: 1px solid #888888;
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  gap: 40px;
+  padding: 1rem;
+}
+.container > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}

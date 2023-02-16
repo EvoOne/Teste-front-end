@@ -1,0 +1,102 @@
+.users--container {
+  width: 1668px;
+  height: 89%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.users--container_div {
+  width: 80%;
+  height: 80%;
+  background: #f2f2f2;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14),
+    0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.user--table_container {
+  width: 100%;
+  height: 80%;
+}
+.users--container_footer {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f2f2f2;
+}
+label {
+  font-weight: 400;
+  font-size: 12px;
+  height: 20px;
+}
+.users--container_footer > p {
+  font-weight: 400;
+  font-size: 12px;
+  height: 20px;
+}
+.users--container_footer > button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: #0000008a;
+  font-weight: 400;
+  font-size: 24px;
+}
+.disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled-button fa-icon {
+  color: grey;
+}
+.users--container_footer > form {
+  width: 138px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.users--container_footer > form > select {
+  font-weight: 400;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #888888;
+  background-color: transparent;
+  padding: 5px;
+}
+.users--container_table {
+  width: 100%;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #f2f2f2;
+}
+.users--container_table > tr > th {
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+  text-align: left;
+  padding: 1rem;
+}
+.users--container_table > tr > td {
+  padding: 1rem;
+  text-align: left;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.12);
+}
+.table--row_name {
+  width: 375px;
+}
+.table--row_phone {
+  width: 375px;
+}
+.table--row_address {
+  width: 685px;
+}
