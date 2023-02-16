@@ -1,0 +1,13 @@
+<article>
+  <app-page-title title="Ocorrências"></app-page-title>
+  <div class="grid-container" *ngIf="occurences$ | async as occurences ; else loading">
+    <div *ngFor="let occurence of occurences | filterByValue : dateInputValue : statusInputValue">
+      <app-occurence-card [occurence]="occurence"></app-occurence-card>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div class="loading-spinner">
+      <app-spinner></app-spinner>
+    </div>
+  </ng-template>
+</article>

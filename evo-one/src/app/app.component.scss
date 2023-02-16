@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 15vh 1fr;
+  grid-template-rows: 15vh 1fr;
+  min-height: 100vh;
+}
+
+app-header {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+app-side-nav {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+main {
+  padding: 1rem;
+  grid-row: 2;
+  grid-column: 2;
+}

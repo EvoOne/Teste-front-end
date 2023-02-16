@@ -1,0 +1,30 @@
+:host {
+  div {
+    margin: 0rem 6rem 6rem;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+
+    table {
+
+      th,
+      td {
+        vertical-align: middle;
+        background-color: #f2f2f2;
+      }
+
+      th {
+        font-weight: 700;
+        font-size: 12px;
+        color: #757575;
+      }
+
+      td {
+        color: #000000DE;
+      }
+
+    }
+
+    mat-paginator {
+      background-color: #f2f2f2;
+    }
+  }
+}

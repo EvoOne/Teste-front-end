@@ -1,0 +1,23 @@
+<div class="container">
+  <img class="logo" src="../../../assets/img/evoone logo 1.svg" alt="Logo Evo One">
+  <div *ngIf="router.url === '/occurences'" class="search-bar">
+    <form class="wrapper" [formGroup]="form">
+      <div class="date-input-wrapper">
+        <input formControlName="dateInput" [dropSpecialCharacters]="false" mask="00/00/0000" placeholder="Data"  id="date" type="text"/>
+      </div>
+      <div class="status-input-wrapper">
+        <select formControlName="statusInput" placeholder="Status" id="status" type="text">
+          <option value="">Status</option>
+          <option value="active">Ativo</option>
+          <option value="closed">Fechado</option>
+          <option value="waiting">Aguardando</option>
+        </select>
+      </div>
+      <button type="search">
+        <i class="magnifying-glass-icon">
+
+        </i>
+      </button>
+    </form>
+  </div>
+</div>

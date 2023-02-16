@@ -1,0 +1,11 @@
+<app-page-title title="Mapa"></app-page-title>
+<google-map width="100%" height="100%" [zoom]="10" [center]="center">
+  <map-marker *ngFor="let markerPosition of markerPositions; let i = index"
+    #marker="mapMarker"
+    [position]="markerPosition.location"
+    [options]="markerOptions"
+    (mapClick)="openInfoWindow(marker, i)">
+    <map-info-window>Ocorrência em: {{markerPosition.address}}</map-info-window>
+  </map-marker>
+
+</google-map>

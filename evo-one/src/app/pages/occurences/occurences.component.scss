@@ -1,0 +1,11 @@
+:host {
+  color: #000000DE;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
+
+
