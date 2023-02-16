@@ -1,0 +1,28 @@
+<section class="search" *ngIf="router.url === '/home'">
+    <form [formGroup]="formSearch">
+        <div>
+            <mat-form-field class="form-field">
+                <input matInput formControlName="date"  placeholder="Data" class="input">
+            </mat-form-field>
+    
+            <mat-divider vertical ></mat-divider>
+    
+            <mat-form-field class="form-field-status">
+                <input matInput formControlName="status" placeholder="Status" class="input">
+            </mat-form-field>   
+
+            <button mat-fab (click)="searchIndicent()" color="primary">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+            
+
+       
+
+       
+
+        <!-- <button (click)="searchIndicent()">
+            <img src="assets/search.svg" alt="">
+        </button> -->
+    </form>    
+</section>

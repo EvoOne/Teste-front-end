@@ -1,0 +1,13 @@
+<article class="incident">
+    <div class="content-image">
+        <img src="{{incident.image}}" class="item-image" alt="Imagem da Ocorrencia">
+    </div>
+    <div class="content-incident">
+        <h1 class="title">{{incident.title}}</h1>
+        <p class="address">{{incident.address}}</p>
+        <p class="data">{{incident.data}}</p>
+        <p class="user">{{incident.user}}</p>
+    </div>
+    <div class="status" ngClass="{'closed': {{incident.status}} == 'closed', 'active': {{incident.status}} == 'active', 'waiting': {{incident.status}} == 'waiting}">
+    </div>
+</article>

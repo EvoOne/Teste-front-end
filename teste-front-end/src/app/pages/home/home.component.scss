@@ -1,0 +1,9 @@
+section.home{
+    .incidents{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 2.875rem 0.9375rem;
+        grid-gap: 3rem;
+        align-items: flex-start;
+    }
+}
