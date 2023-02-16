@@ -18,7 +18,8 @@ https://www.figma.com/file/lqCqO8IrUgLh7oEOEdFnWu/Angular-teste?t=YqYjFgZeg5CYw3
     > Após concluido, faça uma solicitação de Pull request para o repositório principal
 
 ## Para fazer a integração com o google maps você pode seguir o link a baixo:
-https://angular-maps.com/guides/getting-started/
+https://www.npmjs.com/package/@angular/google-maps
+
 
 # Documentação da API
 ## getOccurence
