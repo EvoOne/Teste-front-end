@@ -1,0 +1,43 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="16px"
+  fxLayoutAlign="center"
+>
+  <div
+    fxFlex="0 1 calc(25% - 12px)"
+    fxFlex.lt-xs="100%"
+    *ngFor="let item of datas; index as i"
+  >
+    <mat-card style="margin-bottom: 16px">
+      <mat-card-content>
+        <p
+          class="card-imagem"
+          fxLayout="row"
+          fxLayoutAlign="space-around stretch"
+        >
+          <img
+            class="img-occurences"
+            mat-card-lg-image
+            src="{{ item.image }}"
+          />
+          <span
+            [ngClass]="{
+              active: item.status === 'active',
+              closed: item.status === 'closed',
+              waiting: item.status === 'waiting'
+            }"
+          ></span>
+        </p>
+        <mat-card-title>
+          {{ item.title }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <p>Endereço: {{ item.address }}</p>
+          <p>Data: {{ item.data }}</p>
+          <p>Nome do usuario: {{ item.user }}</p>
+        </mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
