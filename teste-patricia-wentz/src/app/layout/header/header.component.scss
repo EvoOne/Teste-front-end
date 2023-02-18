@@ -1,8 +1,9 @@
+@import "../../../variables";
+
 .header {
   display: flex;
   flex-direction: row;
   padding: 25px;
-  width: 100%;
-  border-bottom: 1px solid #888888;
+  border-bottom: $border-neutral;
   justify-content: start;
 }
