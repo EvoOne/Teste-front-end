@@ -1,0 +1,58 @@
+@import "../../../../../variables";
+
+.users-container {
+  background-color: $white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 1394px;
+  height: 700px;
+  left: 314px;
+  top: 194px;
+  .table-container {
+    height: 620px;
+  }
+  .users {
+    margin: 0 auto;
+    padding: 20px;
+    width: 1000px;
+    th {
+      font-weight: 700;
+      font-size: 12px;
+      border-bottom: $border-neutral;
+      padding: 20px 8px;
+      color: $medium-grey;
+    }
+    td {
+      padding: 20px 8px;
+      font-weight: 400;
+      font-size: 14px;
+      color: black;
+    }
+
+    tr:hover {
+      background-color: $light-gray;
+    }
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+    }
+  }
+}
+
+.paginations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  &__controls {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+  }
+  &__controls ::ng-deep .ngx-pagination .current {
+    background: transparent;
+    color: $black;
+    border-bottom: $border-nav-bar;
+  }
+}

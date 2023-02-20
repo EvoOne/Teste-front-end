@@ -1,1 +1,37 @@
-<p>users works!</p>
+<section class="users-container">
+  <div class="table-container">
+    <table class="users">
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Endereço</th>
+      </tr>
+
+      <tr
+        *ngFor="
+          let users of listUsers
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        "
+      >
+        <td>{{ users.name }}</td>
+        <td>{{ users.phone }}</td>
+        <td>{{ users.address }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="paginations">
+    <pagination-controls
+      class="paginations__controls"
+      previousLabel="<"
+      nextLabel=">"
+      (pageChange)="onTableDataChange((page = $event))"
+    >
+    </pagination-controls>
+  </div>
+</section>
