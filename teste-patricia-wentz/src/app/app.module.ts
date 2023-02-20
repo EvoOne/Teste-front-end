@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, NavbarComponent],
@@ -19,6 +20,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     MatInputModule,
     HttpClientModule,
     MatIconModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
