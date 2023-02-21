@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Users } from '../../models/users';
 import { UsersService } from '../../service/users.service';
 
@@ -8,26 +9,29 @@ import { UsersService } from '../../service/users.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent {
-  public listUsers: Users[] = [];
-  public page: number = 1;
-  public count: number = 0;
-  public tableSize: number = 5;
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
 
+  public listUsers: Users[] = [];
+  public pageSlice = this.listUsers.slice(1, 5);
+  public totalRecords = 0;
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
+    this.paginator._intl.itemsPerPageLabel = 'Rows per page';
+
     this.usersService.getAllUsers().subscribe((data) => {
       this.listUsers = data.listUsers;
-    });
-  }
-  fetchUsers(): void {
-    this.usersService.getAllUsers().subscribe((data) => {
-      this.listUsers = data.listUsers;
+      this.pageSlice = this.listUsers.slice(1, 5);
     });
   }
 
-  onTableDataChange(page: number) {
-    this.page = page;
-    this.fetchUsers();
+  OnPageChange(event: PageEvent) {
+    const startIndex = event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+    if (endIndex > this.listUsers.length) {
+      endIndex = this.listUsers.length;
+    }
+    this.pageSlice = this.listUsers.slice(startIndex, endIndex);
   }
 }
