@@ -1,7 +1,7 @@
 export interface Occurences {
   address: string;
   data: string;
-  id: number;
+  id: string;
   image: string;
   title: string;
   user: string;

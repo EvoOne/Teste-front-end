@@ -1,0 +1,24 @@
+<div class="container-form">
+  <form class="header-form" [formGroup]="formSearch">
+    <input
+      type="text"
+      id="date"
+      class="header-form__input"
+      placeholder="Data"
+      formControlName="date"
+    />
+    <span class="header-form__detail"></span>
+
+    <input
+      type="text"
+      id="status"
+      class="header-form__input"
+      placeholder="Status"
+      formControlName="status"
+    />
+
+    <button class="header-form__btn" type="button" (click)="searchOccurence()">
+      <mat-icon class="btn-icon">search</mat-icon>
+    </button>
+  </form>
+</div>

@@ -73,3 +73,9 @@
 .waiting {
   background-color: $waiting;
 }
+
+.container-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

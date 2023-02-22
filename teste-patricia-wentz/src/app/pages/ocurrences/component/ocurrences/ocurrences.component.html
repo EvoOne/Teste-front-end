@@ -1,5 +1,7 @@
+<app-form></app-form>
+
 <section class="card-occurences-container">
-  <div *ngFor="let ocurrences of listOccurences" class="card-occurences">
+  <div *ngFor="let ocurrences of incidents" class="card-occurences">
     <div class="card-occurences__detail">
       <span
         [ngClass]="{
@@ -22,3 +24,7 @@
     </div>
   </div>
 </section>
+
+<div class="container-not-found" *ngIf="!incidents?.length">
+  <h2>Ocorrência não encontrada ):</h2>
+</div>

@@ -1,0 +1,54 @@
+@import "../../../../../variables";
+
+.container-form {
+  top: -90px;
+  margin: 0 550px;
+  position: relative;
+  width: 480px;
+}
+.header-form {
+  display: flex;
+  align-items: row;
+  border: $border-neutral;
+  border-radius: 31.5px;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &__detail {
+    border-right: $border-detail-form;
+    height: 30px;
+  }
+  &__input {
+    margin: 0 15px;
+    border: none;
+    border-bottom: $border-neutral;
+    padding-bottom: 8px;
+    background-color: transparent;
+  }
+  &__input::placeholder {
+    color: $black;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  &__input:focus-visible {
+    border-bottom: $border-bottom;
+    outline: none;
+  }
+
+  &__btn {
+    background-color: $btn-backround;
+    border: none;
+    border-radius: 80px;
+    width: 32px;
+    height: 32px;
+    margin: 15px;
+    .btn-icon {
+      align-items: center;
+      color: $white;
+      margin-top: 3px;
+    }
+  }
+}

@@ -7,10 +7,6 @@ const routes: Routes = [
     path: '',
     component: OcurrencesComponent,
   },
-  // {
-  //   path: ':id',
-  //   component: ProductsDetailsComponent,
-  // },
 ];
 
 @NgModule({

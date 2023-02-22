@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Occurences } from '../../models/occurences';
+import { Occurences, Query } from '../../models/occurences';
 import { OccurenceService } from '../../service/occurence.service';
 
 @Component({
@@ -8,13 +8,19 @@ import { OccurenceService } from '../../service/occurence.service';
   styleUrls: ['./ocurrences.component.scss'],
 })
 export class OcurrencesComponent {
-  public listOccurences: Occurences[] = [];
-
+  public incidents!: Occurences[];
   constructor(private occurenceService: OccurenceService) {}
 
   ngOnInit(): void {
-    this.occurenceService.getAllOccurences().subscribe((data) => {
-      this.listOccurences = data.listOccurences;
+    this.occurenceService.getAllOccurences().subscribe((result) => {
+      this.occurenceService.results = result.data as Query;
+      this.occurenceService.results =
+        this.occurenceService.results.listOccurences;
+      this.occurenceService.occurencesList.emit(this.occurenceService.results);
+    });
+
+    this.occurenceService.occurencesList.subscribe((result) => {
+      this.incidents = result;
     });
   }
 }
