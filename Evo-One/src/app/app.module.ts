@@ -15,7 +15,6 @@ import { MapsComponent } from './maps/maps.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-// import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [

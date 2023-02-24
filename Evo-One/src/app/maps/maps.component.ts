@@ -11,40 +11,28 @@ export class MapsComponent implements OnInit {
   @ViewChild("placesRef") placesRef: GooglePlaceDirective | undefined;
 
   address: Address | undefined;
-
-  position = {
-    lat: -34.681,
-    lng: -58.371
-  }
+  //key : AIzaSyCkH1M4pyAzG1ccy08eEghT3CVR8FBldRk
+  position: any;
 
   label = {
     color: 'red',
     text: 'Marcador'
   }
 
-  title_adress: any;
-  latitude: any;
-  longitude: any;
-
   public handleAddressChange(address: Address) {
     console.log("Latitude " + address.geometry.location.lat())
     console.log("Longitude " + address.geometry.location.lng())
-
-    this.changeLocation(address);
-  }
-
-  public changeLocation(address: Address){
-    this.position.lat = address.geometry.location.lat();
-    this.position.lng = address.geometry.location.lng();
-  }
-
-  public setLocation(){
-    if('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-      });
+    this.position = {
+      latitude: address.geometry.location.lat(),
+      longitudo: address.geometry.location.lng()
     }
+    this.changePosition(address.geometry.location.lat(), address.geometry.location.lng());
+  }
+
+  changePosition(lat:any, lng: any) {
+    alert('oi')
+    this.position.lat = lat;
+    this.position.lng = lng;
   }
 
   ngOnInit(): void {
