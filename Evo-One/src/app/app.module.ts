@@ -1,3 +1,4 @@
+import { GoogleMapsModule } from '@angular/google-maps';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,9 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MapsComponent } from './maps/maps.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-
-
-
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+// import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,9 @@ import { MatButtonModule } from '@angular/material/button';
     RouterModule,
     AppRoutingModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    GoogleMapsModule,
+    GooglePlaceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
