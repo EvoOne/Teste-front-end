@@ -1,0 +1,73 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a href="/occurrences">
+      <img src="../assets/images/evoone logo 1.png">
+    </a>
+    <div class="inputs-date-and-status">
+      <table class="example-full-width">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Data</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Status</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+
+          <button mat-fab color="primary">
+            <mat-icon>search</mat-icon>
+          </button>
+        </tr>
+      </table>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-list class="navegacao">
+      <mat-list-item class="active">
+        <a id="" routerLink="/">
+          <button class="button-menu-left-icon">
+            <div>
+              <mat-icon>pin_drop</mat-icon><br>
+              Ocorrências
+            </div>
+          </button>
+        </a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a id="users" routerLink="/users">
+          <button class="button-menu-left-icon">
+            <div>
+              <mat-icon>person</mat-icon><br>
+              Usuários
+            </div>
+          </button>
+        </a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a routerLink="/map">
+          <button class="button-menu-left-icon">
+            <div>
+              <mat-icon>map</mat-icon><br>
+              Mapa
+            </div>
+          </button>
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
