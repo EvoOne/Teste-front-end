@@ -1,3 +1,4 @@
+import { UsersComponent } from './users/component/users.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { UsersComponent } from './users/users.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { MapsComponent } from './maps/maps.component';
 import { MatInputModule } from '@angular/material/input';

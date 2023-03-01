@@ -1,8 +1,8 @@
+import { UsersComponent } from './users/component/users.component';
+import { OccurrencesComponent } from './occurrences/component/occurrences.component';
 import { MapsComponent } from './maps/maps.component';
-import { OccurrencesComponent } from './occurrences/occurrences.component';
 import { NgModule } from "@angular/core";
-import { Router, RouterModule, Routes } from "@angular/router";
-import { UsersComponent } from "./users/users.component";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {path: "", component: OccurrencesComponent},
