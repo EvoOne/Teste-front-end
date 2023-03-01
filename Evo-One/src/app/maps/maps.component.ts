@@ -11,7 +11,6 @@ export class MapsComponent implements OnInit {
   @ViewChild("placesRef") placesRef: GooglePlaceDirective | undefined;
 
   address: Address | undefined;
-  //key : AIzaSyCkH1M4pyAzG1ccy08eEghT3CVR8FBldRk
   position: any;
 
   label = {
@@ -20,8 +19,6 @@ export class MapsComponent implements OnInit {
   }
 
   public handleAddressChange(address: Address) {
-    console.log("Latitude " + address.geometry.location.lat())
-    console.log("Longitude " + address.geometry.location.lng())
     this.position = {
       latitude: address.geometry.location.lat(),
       longitudo: address.geometry.location.lng()
