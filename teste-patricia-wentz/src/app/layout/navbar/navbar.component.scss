@@ -1,0 +1,31 @@
+@import "../../../variables";
+.navbar {
+  top: -17px;
+  position: relative;
+  width: 100px;
+  border-right: $border-neutral;
+  padding: 0 15px;
+  height: 100%;
+  li {
+    margin: 20px 0;
+  }
+  ul {
+    padding: 20px 0px;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h3 {
+    color: $black;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+    border-bottom: 2px solid transparent;
+  }
+  h3:hover {
+    border-bottom: $border-nav-bar;
+  }
+}

@@ -1,0 +1,30 @@
+<app-form></app-form>
+
+<section class="card-occurences-container">
+  <div *ngFor="let ocurrences of incidents" class="card-occurences">
+    <div class="card-occurences__detail">
+      <span
+        [ngClass]="{
+          closed: ocurrences.status == 'closed',
+          active: ocurrences.status == 'active',
+          waiting: ocurrences.status == 'waiting'
+        }"
+      ></span>
+      <img src="{{ ocurrences.image }}" alt="image of {{ ocurrences.title }}" />
+    </div>
+    <div class="card-occurences__infos">
+      <h2 class="card-occurences__title">{{ ocurrences.title }}</h2>
+      <h3 class="card-occurences__info-detail">
+        Enderço: {{ ocurrences.address }}
+      </h3>
+      <h3 class="card-occurences__info-detail">Data: {{ ocurrences.data }}</h3>
+      <h3 class="card-occurences__info-detail">
+        Usuário: {{ ocurrences.user }}
+      </h3>
+    </div>
+  </div>
+</section>
+
+<div class="container-not-found" *ngIf="!incidents?.length">
+  <h2>Ocorrência não encontrada ):</h2>
+</div>
