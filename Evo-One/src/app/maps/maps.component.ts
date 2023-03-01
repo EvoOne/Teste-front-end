@@ -30,7 +30,6 @@ export class MapsComponent implements OnInit {
   }
 
   changePosition(lat:any, lng: any) {
-    alert('oi')
     this.position.lat = lat;
     this.position.lng = lng;
   }
