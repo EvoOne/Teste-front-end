@@ -1,0 +1,29 @@
+<header>
+  <div>
+    <img src="../../assets/img/evoone-logo.svg" alt="logo evoone" />
+  </div>
+
+  <div class="occurence-filter" *ngIf="router.url === '/occurences'">
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Data"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Status" type="text" />
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>

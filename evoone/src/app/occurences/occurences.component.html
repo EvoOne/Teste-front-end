@@ -1,0 +1,20 @@
+<div>
+  <mat-card *ngFor="let occurence of allOccurences">
+    <mat-card-header>
+      <mat-icon
+        [ngClass]="{
+          active: occurence.status === 'active',
+          waiting: occurence.status === 'waiting',
+          closed: occurence.status === 'closed'
+        }"
+      ></mat-icon>
+      <img src="{{ occurence.image }}" />
+    </mat-card-header>
+    <mat-card-content>
+      <p id="titulo-ocorrencia">{{ occurence.title }}</p>
+      <p class="informacoes-ocorrencia">{{ occurence.address }}</p>
+      <p class="informacoes-ocorrencia">{{ occurence.data }}</p>
+      <p class="informacoes-ocorrencia">{{ occurence.user }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

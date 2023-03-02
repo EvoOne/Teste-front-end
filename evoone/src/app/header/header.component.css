@@ -1,0 +1,45 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #888888;
+  padding-bottom: 27px;
+}
+
+.occurence-filter {
+  border: 1px solid #888888;
+  border-radius: 31.5px;
+  display: flex;
+  margin-top: 22px;
+  margin-right: 727px;
+}
+
+div {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+mat-form-field {
+  margin-top: 19px;
+  width: 150px;
+}
+
+input {
+  padding-bottom: 9px;
+}
+
+input::placeholder {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+button {
+  background-color: #3f51b5;
+  color: #fff;
+  margin-top: 8px;
+}
+
+img {
+  margin-left: 42px;
+  margin-top: 19px;
+}

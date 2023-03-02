@@ -1,0 +1,56 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 6.1em;
+  margin-top: -117em;
+  min-height: 100vh;
+}
+
+mat-card {
+  display: flex;
+  height: 404px;
+  padding-left: auto;
+  padding-right: auto;
+  width: 270px;
+}
+
+mat-card-header {
+  display: block;
+}
+
+mat-icon {
+  border-radius: 50%;
+  right: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+.active {
+  background-color: #74fb45;
+}
+
+.waiting {
+  background-color: #fbd345;
+}
+
+.closed {
+  background-color: #fb4545;
+}
+
+img {
+  border-radius: 12px;
+  width: 100%;
+}
+
+#titulo-ocorrencia {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.informacoes-ocorrencia {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 14px;
+  font-weight: 400;
+}
